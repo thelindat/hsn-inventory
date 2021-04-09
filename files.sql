@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `hsn_inventory` (
 	`name` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci', 
 	`data` LONGTEXT NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
-	UNIQUE KEY (`name`)
+  	UNIQUE KEY `name` (`name`)
 )
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB;
@@ -23,7 +23,7 @@ ALTER TABLE `items`
 	ADD IF NOT EXISTS `stackable` INT(11) NULL DEFAULT '1', 
 	ADD IF NOT EXISTS `closeonuse` INT(11) NULL DEFAULT '1', 
 	ADD IF NOT EXISTS `description` VARCHAR(50) NULL DEFAULT NULL,
-	PRIMARY KEY (`name`);
+	ADD PRIMARY KEY (`name`);
 
 
 INSERT INTO `items` (`name`, `label`, `weight`, `can_remove`, `stackable`, `closeonuse`, `description`) VALUES
