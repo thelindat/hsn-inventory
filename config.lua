@@ -969,7 +969,7 @@ Config.Shops = {
 		},
 		text = 'E - Open Shop',
 		inventory = {
-			{
+--[[			{
 				name = 'keys',
 				price = 15,
 				count = 200,
@@ -979,7 +979,7 @@ Config.Shops = {
 				name = 'identification',
 				price = 15,
 				count = 200,
-			},
+			},]]
 			{
 				name = 'burger',
 				price = 15,
@@ -1016,7 +1016,8 @@ Config.Shops = {
 				count = 1,
 				metadata = {
 					serial = 'POL',
-					weapontint = 5
+					weapontint = 5,
+					registered = 'setname'
 				},
 			},
 			{
@@ -1026,7 +1027,8 @@ Config.Shops = {
 				metadata = {
 					serial = 'POL',
 					components = { 'flashlight' },
-					weapontint = 5
+					weapontint = 5,
+					registered = 'setname'
 				},
 			},
 			{
@@ -1036,7 +1038,8 @@ Config.Shops = {
 				metadata = {
 					serial = 'POL',
 					components = { 'flashlight' },
-					weapontint = 5
+					weapontint = 5,
+					registered = 'setname'
 				},
 			},
 			{
@@ -1046,7 +1049,8 @@ Config.Shops = {
 				metadata = {
 					serial = 'POL',
 					components = { 'flashlight' },
-					weapontint = 5
+					weapontint = 5,
+					registered = 'setname'
 				},
 			},
 			{
@@ -1057,7 +1061,8 @@ Config.Shops = {
 				metadata = {
 					serial = 'POL',
 					components = { 'flashlight' },
-					weapontint = 5
+					weapontint = 5,
+					registered = 'setname'
 				},
 			},
 			{
@@ -1086,6 +1091,34 @@ Config.Shops = {
 				metadata = {
 					serial = 'POL',
 					weapontint = 5
+				},
+			},
+		},
+		{
+		job = 'ambulance',
+		coords = vector3(306.3687, -601.5139, 43.28406),
+		blip = {
+			id = 403,
+			name = 'Medical Cabinet',
+			color = 69,
+			scale = 0.6,
+		},
+		text = 'E - Open Shop',
+		name = 'Medical Cabinet',
+		inventory = {
+			{
+				name = 'medikit',
+				price = 25,
+				count = 1,
+			},
+			{
+				name = 'WEAPON_STUNGUN',
+				price = 150,
+				count = 1,
+				grade = 6,
+				metadata = {
+					serial = 'EMS',
+					registered = 'setname'
 				},
 			},
 		},
