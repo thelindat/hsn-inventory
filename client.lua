@@ -188,7 +188,7 @@ end)
 
 RegisterCommand('vehinv', function()
 	if not playerID then return end
-	if isBusy then TriggerEvent('hsn-inventory:notification','You can\'t open your inventory right now',2) return end 
+	if isBusy or invOpen then TriggerEvent('hsn-inventory:notification','You can\'t open your inventory right now',2) return end 
 	if not CanOpenInventory() then return end
 	if not isDead and not isCuffed and not IsPedInAnyVehicle(playerPed, false) then -- trunk
 		local vehicle = ESX.Game.GetClosestVehicle()
@@ -274,12 +274,12 @@ RegisterCommand('vehinv', function()
 end, false)
 
 CanOpenInventory = function()
-	if playerName and not isBusy and not isShooting and not isDead and not isCuffed and not invOpen and not IsPedDeadOrDying(playerPed, 1) and not IsPauseMenuActive() then return true end
+	if playerName and not isBusy and not isShooting and not isDead and not isCuffed and not IsPedDeadOrDying(playerPed, 1) and not IsPauseMenuActive() then return true end
 	return false
 end
 	
 RegisterCommand('inv', function()
-	if isBusy then TriggerEvent('hsn-inventory:notification','You can\'t open your inventory right now',2) return end 
+	if isBusy or isBusy then TriggerEvent('hsn-inventory:notification','You can\'t open your inventory right now',2) return end 
 	if CanOpenInventory() then
 		TriggerEvent('randPickupAnim')
 		TriggerServerEvent('hsn-inventory:server:openInventory',{type = 'drop',id = currentDrop, coords = currentDropCoords })
@@ -793,7 +793,7 @@ end)
 
 RegisterCommand('steal',function()
 	local ped = playerPed
-	if not IsPedInAnyVehicle(ped, true) and CanOpenInventory() then	 
+	if not IsPedInAnyVehicle(playerPed, true) and not invOpen and CanOpenInventory() then	 
 		openTargetInventory()
 	end
 end)
