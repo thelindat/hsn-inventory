@@ -165,7 +165,7 @@ AddPlayerInventory = function(identifier, item, count, slot, metadata)
 							count = 1 
 							if type(metadata) ~= 'table' then metadata = {} end
 							if not metadata.durability then metadata.durability = 100 end
-							if not metadata.ammo then metadata.ammo = 0 end
+							if not metadata.ammo and ESXItems[item].ammotype then metadata.ammo = 0 end
 							if not metadata.components then metadata.components = {} end
 							metadata.serial = GetRandomSerial(metadata.serial)
 							if metadata.registered == 'setname' then metadata.registered = xPlayer.getName() end
@@ -1298,7 +1298,7 @@ AddEventHandler('hsn-inventory:server:updateWeapon',function(item, type, xPlayer
 	if playerInventory[xPlayer.identifier][item.slot] ~= nil then
 		if playerInventory[xPlayer.identifier][item.slot].metadata ~= nil then
 			playerInventory[xPlayer.identifier][item.slot].metadata = item.metadata
-			if type == nil then
+			if type == nil and playerInventory[xPlayer.identifier][item.slot].metadata.ammo ~= nil then
 				local ammo = {}
 				ammo.type = ESXItems[item.name].ammotype
 				ammo.count = playerInventory[xPlayer.identifier][item.slot].metadata.ammo
@@ -1540,7 +1540,7 @@ AddEventHandler('hsn-inventory:setplayerInventory',function(identifier,inventory
 					v.count = 1
 					v.metadata = {}
 					v.metadata.durability = 100
-					v.metadata.ammo = 0
+					if ESXItems[v.name].ammotype then metadata.ammo = 0 end
 					v.metadata.components = {}
 					v.metadata.serial = GetRandomSerial()
 				end
@@ -1589,7 +1589,7 @@ AddEventHandler('hsn-inventory:setplayerInventory',function(identifier,inventory
 						v = { slot = loop, name = weapon, count = 1 }
 						v.metadata = {}
 						v.metadata.durability = 100
-						v.metadata.ammo = 0
+						ESXItems[v.name].ammotype then metadata.ammo = 0 end
 						v.metadata.components = {}
 						v.metadata.serial = GetRandomSerial()
 
