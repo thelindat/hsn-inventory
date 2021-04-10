@@ -1,3 +1,10 @@
+## [This resource will no longer be receiving support, there is a new repository](https://github.com/thelindat/linden_inventory)
+I'm reviewing all existing code and rewriting large parts of it, so many features are untested or may be unavailable.  
+Report any bugs, feature requests, or issues you have with the inventory [here](https://github.com/thelindat/linden_inventory/issues/new/choose).  
+My current focus is to ensure everything is working with the changes before adding new features.
+
+
+<br><br><br><br><br><br>
 <p align='center'><img src='https://i.imgur.com/JxZpgNM.png'/><br>
 <a href='https://streamable.com/bggvpg'>Showcase</a> | <a href='https://discord.gg/hmcmv3P7YW'>Discord</a></p>
 <h2 align='center'>Notice</h2><p align='center'><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
