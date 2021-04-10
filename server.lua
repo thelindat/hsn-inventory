@@ -1589,7 +1589,7 @@ AddEventHandler('hsn-inventory:setplayerInventory',function(identifier,inventory
 						v = { slot = loop, name = weapon, count = 1 }
 						v.metadata = {}
 						v.metadata.durability = 100
-						ESXItems[v.name].ammotype then v.metadata.ammo = 0 end
+						if ESXItems[v.name].ammotype then v.metadata.ammo = 0 end
 						v.metadata.components = {}
 						v.metadata.serial = GetRandomSerial()
 
